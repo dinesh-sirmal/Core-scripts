@@ -1,1 +1,45 @@
-Initial setup for Core scripts tracking.
+Changes Made in Tiny Core Os:
+Making persistacne:
+persistance directory
+mkdir-p /mnt/sda1/tce
+backup settings
+ln-s /mnt/sda1/tce /etc/sysconfig/tcedir
+This command saves system changes permanently.
+filetool.sh-b
+
+To ensure persistance:
+sudo vi /mnt/sda1/tce/boot/extlinux.conf
+
+Install a test package:
+ tce-load-wi nano 
+
+
+Note: this all are described in report page number 18.
+
+Making Custom Command:
+command name : "mycommand"
+echo ”This is my custom command!”
+creating :  chmod +x /usr/local/bin/mycommand
+Save the changes: filetool.sh-b
+
+
+
+Making Alias:
+ alias anywho=’ls-la’
+to add the alias
+echo "alias anywho=’ls-la’" >> ~/.ashrc
+for backup list:  echo ".ashrc" >> /opt/.filetool.lst
+Save the backup:
+ filetool.sh-b
+
+
+
+
+
+
+
+
+
+
+
+
